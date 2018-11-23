@@ -110,3 +110,30 @@ if __name__ == '__main__':
 
 python -m pip install --index-url=http://download.qt.io/snapshots/ci/pyside/5.11/latest pyside2 --trusted-host download.qt.io
 
+
+
+
+
+---------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+simple_arm         all at once!
+
+mkdir catkin_ws
+cd catkin_ws
+mkdir src
+cd src
+git clone https://github.com/udacity/simple_arm
+cd catkin_ws
+catkin_make
+source devel/setup.bash
+python -m pip install --index-url=http://download.qt.io/snapshots/ci/pyside/5.11/latest pyside2 --trusted-host download.qt.io
+
+
+-------
+roslaunch simple_arm robot_spawn.launch
+-------
+rosservice call /arm_mover/safe_move "joint_1:1.57
+joint_2:1.57
+
+---------------------------------------------------------------------------------
+
